@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Exchange Rates</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+            background-color: #f0f7e4;
+        }
+
+        /* Header Styles */
+        .header {
+            background: linear-gradient(135deg, #4CAF50, #2E7D32);
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        /* Main Content Styles */
+        .main-content {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        /* Table Container Styles */
+        #table-container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            overflow: hidden;
+            padding: 1rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+
+        th {
+            background-color: #C8E6C9;
+            color: #2E7D32;
+            padding: 1rem;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        td {
+            padding: 1rem;
+            border-bottom: 1px solid #E0E0E0;
+        }
+
+        tr:hover {
+            background-color: #F1F8E9;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Footer Styles */
+        .footer {
+            background-color: #1B5E20;
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .footer p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .main-content {
+                padding: 1rem;
+            }
+
+            #table-container {
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>💰 Currency Exchange Rates</h1>
+        <p>Real-time foreign exchange market data</p>
+    </header>
+
+    <main class="main-content">
+        <div id="table-container">
+            <!-- Dynamic table will be inserted here by JavaScript -->
+            <script src="{{ url_for('static', filename='main-table-script.js') }}?v=1.7" id="main-page-table"></script>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>© 2024 Financial Data Hub. All rights reserved.</p>
+        <p>Data updated every 5 minutes</p>
+    </footer>
+</body>
+</html>

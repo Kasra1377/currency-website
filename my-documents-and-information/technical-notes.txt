@@ -1,0 +1,10 @@
+Suggestions to make the program more cohisive:
+
+1. We can scrap all of the information from a product and write the program in a way that all of the product characterists are saved in a tabular format (using Pandas for example)
+2. We can automate the program to do a for loop over a list of products and open their webpages and scrap information one by one.
+3.The program must save the product data in a pandas or excel file and the use the file to load the page
+this is beacuse it take several minutes to scrap an amazon page
+4. Program must be designed to scrap the amazon pages once per day.
+
+5. When it takes several seconds to scrap a data from amazon you can load a data using 
+a seperate class method with a @cached_property decorator on top of it.

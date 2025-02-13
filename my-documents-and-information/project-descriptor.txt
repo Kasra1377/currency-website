@@ -1,0 +1,6 @@
+What features should my website have:
+
+1. Scraping and showing recent prices of specific commodities (i.e. Nvidia Graphic Cards).
+2. Tracking prices of commodoties in the last 3 months, 6 months, etc. which is selectable by the user.
+3. Ploting the data that was scrapped by the 2nd step with a line graph.
+4. Converting the price (in dollors) to other currencies like Pounds, Irania rials, etc. 

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Details</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* Header Styles */
+        .header {
+            background: linear-gradient(135deg, #4CAF50, #2E7D32);
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        body {
+            background-color: #f5f7fa;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .main-content {
+            flex: 1;
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .grid-section {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .currency-display {
+            grid-column: 2 / 3;
+            grid-row: 1 / 2;
+            background: #2c3e50;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .currency-image {
+            width: 200px;
+            height: 120px;
+            background: #34495e;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+
+        .currency-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .table-container {
+            grid-column: 1 / 2;
+            grid-row: 1 / 3;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        th {
+            background-color: #3498db;
+            color: white;
+            padding: 1rem;
+            text-align: left;
+        }
+
+        td {
+            padding: 1rem;
+            border-bottom: 1px solid #ecf0f1;
+        }
+
+        tr:hover {
+            background-color: #f8f9fa;
+        }
+
+        /* Footer Styles */
+        .footer {
+            background-color: #1B5E20;
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .footer p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        /* Lower Right Section */
+        #secondary-table-container {
+            grid-column: 2 / 3;
+            grid-row: 2 / 3;
+        }
+
+        .currency-name {
+            display:inline;
+            float:left;
+        }
+
+        .currency-value {
+            display:inline;
+            float:right;
+        }
+
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>💰 Currency Exchange Rates</h1>
+        <p>Real-time foreign exchange market data</p>
+    </header>
+
+    <main class="main-content">
+        <!-- Upper Left: Currency Indicator Table -->
+
+        <div class="grid-section table-container" id="currency-indicator-table-container">
+            <!-- <h2>Exchange Rates</h2> -->
+                <!-- Dynamic table will be inserted here by JavaScript -->
+                <script src="{{ url_for('static', filename='currency-indicator-table-script.js') }}?v=1.8" id="main-page-table"></script>
+        </div>
+
+        <!-- Upper Right: Currency Display -->
+        <div class="grid-section currency-display">
+            <div class="currency-image">
+                <!-- image placeholder -->
+            </div>
+            <div class="currency-info">
+                <h4 class="currency-name">{{currency_name}}</h4>
+                <h4 class="currency-value">{{currency_value}}</h4>
+                <!-- currency symbol placeholder -->
+            </div>
+        </div>
+
+        <!-- Lower Right: Secondary Table -->
+        <div class="grid-section" id="secondary-table-container">
+            <h2>Historical Data</h2>
+            <!-- Table will be populated by JavaScript -->
+        </div>
+
+        <!-- Lower Left: Empty Section -->
+        <div class="grid-section" style="background: transparent; box-shadow: none;"></div>
+
+    </main>
+
+    <footer class="footer">
+        <p>© 2024 Financial Data Hub. All rights reserved.</p>
+        <p>Data updated every 5 minutes</p>
+    </footer>
+
+
+</body>
+</html>
