@@ -1,5 +1,5 @@
 import os
-TOKEN = "7756190019:AAFBs68_wHhuwdre1mCZoJbeZdT_WucqTXw"
+TOKEN = ""
 WORKING_PATH = os.getcwd()
 
 ENGLISH_TABLE_HEADERS = {
